@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -141,7 +141,7 @@
       transform: translateY(-50%);
       border-top: 1px solid rgba(179, 146, 100, 0.3);
       border-bottom: 1px solid rgba(179, 146, 100, 0.3);
-      background: rgba(179, 146, 100, 0.05);
+      background: rgba(179, 146, 100, 0.02);
       pointer-events: none;
       border-radius: 8px;
     }
@@ -178,8 +178,9 @@
     }
 
     .select-label {
-      font-size: 0.65rem;
-      color: #8b7a63;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #5f4e39;
       margin: 0 0.05rem;
       display: flex;
       align-items: center;
@@ -213,7 +214,7 @@
     .result-value {
       font-weight: 700;
       font-size: 1.05rem;
-      color: #3e2f1f;
+      color: #b45f2a;
       line-height: 1.2;
     }
 
@@ -224,7 +225,7 @@
     }
 
     .price-highlight {
-      color: #b45f2a;
+      color: #e63946;
     }
 
     .best-badge {
@@ -267,8 +268,8 @@
 <div class="container">
   <h2>🧻 纸抽比价</h2>
   <div class="columns" id="productColumns"></div>
-  <button class="reset-btn" id="resetBtn">↺ 重置默认</button>
-  <div class="unit-note">计算结果为每一百抽的价格</div>
+  <button class="reset-btn" id="resetBtn">重置默认</button>
+  <div class="unit-note">DannyWu2026</div>
 </div>
 
 <script>
@@ -582,7 +583,7 @@
           <div class="card" data-index="${idx}">
             <div class="wheel-group">
               <div class="wheel-row">
-                <span class="wheel-label">💰总价</span>
+                <span class="wheel-label">总价</span>
                 <div class="price-wheels">
                   <div class="wheel-wrapper" id="wheel-tens-${idx}"></div>
                   <div class="wheel-wrapper" id="wheel-ones-${idx}"></div>
@@ -592,14 +593,14 @@
                 </div>
               </div>
               <div class="wheel-row">
-                <span class="wheel-label">📦包数</span>
+                <span class="wheel-label">包数</span>
                 <div class="dual-selects">
                   <div class="select-wrapper">
                     <select id="select-packs-${idx}">
                       ${renderSelectOptions(packOptions, prod.packs)}
                     </select>
                   </div>
-                  <span class="select-label">🧻抽数</span>
+                  <span class="select-label">抽数</span>
                   <div class="select-wrapper">
                     <select id="select-draws-${idx}">
                       ${renderSelectOptions(drawOptions, prod.draws, true)}
@@ -613,9 +614,9 @@
                 <span class="result-label">每包</span>
                 <span class="result-value">${perPack}<small>元</small></span>
               </div>
-              <div class="best-badge" style="display: ${isBest ? 'block' : 'none'};">🏆<br>最划算哟♥♥</div>
+              <div class="best-badge" style="display: ${isBest ? 'block' : 'none'};font-size: 1rem;">最划算哟♥♥</div>
               <div class="result-item">
-                <span class="result-label">一百抽</span>
+                <span class="result-label">每百抽</span>
                 <span class="result-value price-highlight">${perHundred}<small>元</small></span>
               </div>
             </div>
